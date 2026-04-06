@@ -1,0 +1,2515 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬來西亞 2026｜家庭旅遊行程</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TC:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #9A6F2A;
+    --gold-light: #C49A3C;
+    --dark: #F7F4EF;
+    --dark2: #EDEAE3;
+    --dark3: #E2DDD4;
+    --cream: #2C2417;
+    --cream-dim: #4A3F2F;
+    --teal: #1F6B5F;
+    --teal-light: #237A6C;
+    --red: #B03020;
+    --text: #3D3328;
+    --text-dim: #7A6E5E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    font-size: 15px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #2C2417 0%, #3D2E10 40%, #1F3A35 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 80% 30%, rgba(42,124,111,0.10) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .flag-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .flag-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  .flag-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 10vw, 110px);
+    font-weight: 700;
+    color: #F5EDD6;
+    line-height: 0.9;
+    text-align: center;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title span {
+    color: #E8C97A;
+    display: block;
+    font-style: italic;
+    font-size: 0.6em;
+  }
+
+  .hero-subtitle {
+    margin-top: 28px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: rgba(245,237,214,0.7);
+    text-align: center;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-meta {
+    margin-top: 48px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .meta-item {
+    text-align: center;
+  }
+
+  .meta-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #E8C97A;
+    display: block;
+  }
+
+  .meta-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgba(245,237,214,0.6);
+    text-transform: uppercase;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.2s;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  .scroll-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--text-dim);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,244,239,0.97);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(154,111,42,0.2);
+    padding: 0 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--gold);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── SECTION WRAPPER ── */
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+
+  .section-header {
+    margin-bottom: 56px;
+  }
+
+  .section-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    color: var(--cream);
+    line-height: 1.1;
+  }
+
+  .section-title em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin-top: 20px;
+  }
+
+  /* ── FLIGHT BANNER ── */
+  #flights {
+    background: var(--dark2);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .flight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+  }
+
+  .flight-card {
+    background: #FFFFFF;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+
+  .flight-card:hover { background: #242424; }
+
+  .flight-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--gold);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .flight-card:hover::before { opacity: 1; }
+
+  .flight-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .flight-route {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .flight-iata {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--cream);
+    font-weight: 700;
+  }
+
+  .flight-arrow {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .flight-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold-light), var(--text-dim));
+  }
+
+  .flight-plane { color: var(--gold); font-size: 14px; }
+
+  .flight-times {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  .flight-num {
+    margin-top: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--teal-light);
+    letter-spacing: 1px;
+  }
+
+  /* ── HOTEL CARDS ── */
+  .hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .hotel-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(154,111,42,0.15);
+    padding: 32px;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  }
+
+  .hotel-card:hover {
+    border-color: rgba(154,111,42,0.5);
+    transform: translateY(-2px);
+  }
+
+  .hotel-city {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--teal-light);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .hotel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+
+  .hotel-dates {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+
+  .hotel-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--gold);
+    margin-right: 6px;
+    margin-top: 4px;
+  }
+
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    padding: 8px 14px;
+    background: transparent;
+    border: 1px solid rgba(42,124,111,0.5);
+    color: var(--teal-light);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .map-btn:hover {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: white;
+  }
+
+  /* ── DAY CARDS ── */
+  #itinerary { background: var(--dark2); }
+
+  .days-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .day-block {
+    background: #FFFFFF;
+    border: 1px solid rgba(154,111,42,0.15);
+    overflow: hidden;
+    transition: border-color 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+
+  .day-block:hover { border-color: rgba(154,111,42,0.4); }
+
+  .day-header {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 28px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .day-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: rgba(154,111,42,0.18);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .day-info {}
+
+  .day-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--cream);
+  }
+
+  .day-toggle {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 16px;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  .day-block.open .day-toggle { transform: rotate(45deg); }
+
+  .day-body {
+    display: none;
+    padding: 0 28px 28px;
+    background: #FAFAF7;
+  }
+
+  .day-block.open .day-body { display: block; }
+
+  .timeline {
+    position: relative;
+    padding-left: 24px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 0 0 24px 20px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dark2);
+    border: 1.5px solid var(--gold);
+  }
+
+  .timeline-time {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .timeline-title {
+    font-size: 15px;
+    color: var(--cream);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  .timeline-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .tag {
+    padding: 3px 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+  }
+
+  .tag-wc { background: rgba(31,107,95,0.08); color: #1F6B5F; border: 1px solid rgba(31,107,95,0.3); }
+  .tag-food { background: rgba(154,111,42,0.08); color: #7A5515; border: 1px solid rgba(154,111,42,0.25); }
+  .tag-photo { background: rgba(176,48,32,0.08); color: #B03020; border: 1px solid rgba(176,48,32,0.25); }
+  .tag-warn { background: rgba(176,48,32,0.08); color: #B03020; border: 1px solid rgba(176,48,32,0.2); }
+  .tag-transit { background: rgba(30,100,170,0.08); color: #1E64AA; border: 1px solid rgba(30,100,170,0.2); }
+  .tag-free { background: rgba(100,60,150,0.08); color: #64309A; border: 1px solid rgba(100,60,150,0.2); }
+
+  .item-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .item-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .link-map {
+    background: rgba(31,107,95,0.08);
+    color: #1F6B5F;
+    border: 1px solid rgba(31,107,95,0.3);
+  }
+
+  .link-map:hover { background: #1F6B5F; color: white; }
+
+  .link-web {
+    background: rgba(154,111,42,0.08);
+    color: #7A5515;
+    border: 1px solid rgba(154,111,42,0.25);
+  }
+
+  .link-web:hover { background: var(--gold); color: white; }
+
+  .link-ig {
+    background: rgba(176,48,32,0.08);
+    color: #B03020;
+    border: 1px solid rgba(176,48,32,0.2);
+  }
+
+  .link-ig:hover { background: #B03020; color: white; }
+
+  .link-yt {
+    background: rgba(176,48,32,0.08);
+    color: #B03020;
+    border: 1px solid rgba(176,48,32,0.2);
+  }
+
+  .link-yt:hover { background: #B03020; color: white; }
+
+  .photo-tip {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: rgba(176,48,32,0.05);
+    border-left: 2px solid rgba(176,48,32,0.4);
+    font-size: 12px;
+    color: #7A3020;
+    line-height: 1.6;
+  }
+
+  .photo-tip strong {
+    color: #B03020;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ── SHOPPING ── */
+  #shopping { background: var(--dark2); border-top: 1px solid rgba(201,168,76,0.1); }
+
+  .shopping-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .shop-card {
+    background: #FFFFFF;
+    padding: 24px;
+    border: 1px solid rgba(154,111,42,0.15);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    transition: border-color 0.2s;
+  }
+
+  .shop-card:hover { border-color: rgba(201,168,76,0.4); }
+
+  .shop-icon { font-size: 28px; margin-bottom: 12px; }
+
+  .shop-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+
+  .shop-loc {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .shop-items {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.8;
+  }
+
+  /* ── WC TABLE ── */
+  #wc { background: var(--dark); }
+
+  .wc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .wc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 18px;
+    background: #FFFFFF;
+    border: 1px solid rgba(42,124,111,0.15);
+  }
+
+  .wc-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+
+  .wc-spot {
+    font-size: 13px;
+    color: var(--cream);
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .wc-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  /* ── CHECKLIST ── */
+  #checklist { background: var(--dark2); border-top: 1px solid rgba(201,168,76,0.1); }
+
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 18px;
+    background: #FFFFFF;
+    border: 1px solid rgba(154,111,42,0.12);
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .check-item:hover { border-color: rgba(154,111,42,0.4); }
+
+  .check-item.done { opacity: 0.4; }
+
+  .check-box {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--gold);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--gold);
+    transition: all 0.2s;
+  }
+
+  .check-item.done .check-box {
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  .check-text {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .check-text strong {
+    color: var(--cream);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .check-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--teal-light);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #2C2417;
+    border-top: 1px solid rgba(154,111,42,0.3);
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .footer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #E8C97A;
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+
+  .footer-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(245,237,214,0.5);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .day-header { grid-template-columns: 60px 1fr auto; gap: 12px; padding: 18px; }
+    .day-num { font-size: 36px; }
+    .hero-meta { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="flag-row">
+    <div class="flag-divider"></div>
+    <span class="flag-text">Malaysia · April 2026</span>
+    <div class="flag-divider"></div>
+  </div>
+  <h1 class="hero-title">
+    馬來西亞
+    <span>Family Journey</span>
+  </h1>
+  <p class="hero-subtitle">Kuala Lumpur &nbsp;·&nbsp; Langkawi &nbsp;·&nbsp; 4月8日 — 13日</p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-num">6</span>
+      <span class="meta-label">天數</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-num">4</span>
+      <span class="meta-label">大人</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-num">2</span>
+      <span class="meta-label">城市</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-num">12+</span>
+      <span class="meta-label">景點</span>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">SCROLL</span>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">MY '26</span>
+    <ul class="nav-links">
+      <li><a href="#flights">班機</a></li>
+      <li><a href="#hotels">住宿</a></li>
+      <li><a href="#itinerary">行程</a></li>
+      <li><a href="#shopping">購物</a></li>
+      <li><a href="#wc">廁所</a></li>
+      <li><a href="#traveltips" style="color:var(--teal-light)">必知</a></li>
+      <li><a href="#luggage">行李</a></li>
+      <li><a href="#checklist">待辦</a></li>
+      <li><a href="#alternatives" style="color:#E74C3C">備案</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- FLIGHTS -->
+<section id="flights" style="background:var(--dark2);border-top:1px solid rgba(154,111,42,0.1);border-bottom:1px solid rgba(154,111,42,0.1);">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">✈ Flight Schedule</div>
+      <h2 class="section-title">班機 <em>時刻表</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="flight-grid">
+      <div class="flight-card">
+        <div class="flight-date">4/8 抵達 KUL → WOLO</div>
+        <div class="flight-route" style="gap:8px;flex-wrap:wrap;">
+          <span class="flight-iata" style="font-size:18px;">KUL</span>
+          <div class="flight-arrow"><div class="flight-line"></div><span class="flight-plane">🚄</span><div class="flight-line"></div></div>
+          <span class="flight-iata" style="font-size:18px;">KL Sentral</span>
+          <div class="flight-arrow"><div class="flight-line"></div><span class="flight-plane">🚝</span><div class="flight-line"></div></div>
+          <span class="flight-iata" style="font-size:18px;">WOLO</span>
+        </div>
+        <div class="flight-times"><span>KLIA Express 30分鐘</span><span>轉 Monorail 12分鐘</span></div>
+        <div class="flight-num" style="color:var(--teal-light)">全程有電梯 ✅ · 共約RM57.50/人 · 含大行李架</div>
+      </div>
+      <div class="flight-card">
+        <div class="flight-date">4/8晚 WOLO → 茨廠街</div>
+        <div class="flight-route" style="gap:8px;">
+          <span class="flight-iata" style="font-size:18px;">WOLO</span>
+          <div class="flight-arrow"><div class="flight-line"></div><span class="flight-plane">🚝</span><div class="flight-line"></div></div>
+          <span class="flight-iata" style="font-size:18px;">茨廠街</span>
+        </div>
+        <div class="flight-times"><span>Monorail 1站</span><span>或步行15分鐘</span></div>
+        <div class="flight-num" style="color:var(--teal-light)">票價約RM2.50 · 步行也可到</div>
+      </div>
+      <div class="flight-card">
+        <div class="flight-date">4/10 WOLO → KUL機場</div>
+        <div class="flight-route" style="gap:8px;flex-wrap:wrap;">
+          <span class="flight-iata" style="font-size:18px;">WOLO</span>
+          <div class="flight-arrow"><div class="flight-line"></div><span class="flight-plane">🚝</span><div class="flight-line"></div></div>
+          <span class="flight-iata" style="font-size:18px;">KL Sentral</span>
+          <div class="flight-arrow"><div class="flight-line"></div><span class="flight-plane">🚄</span><div class="flight-line"></div></div>
+          <span class="flight-iata" style="font-size:18px;">KUL</span>
+        </div>
+        <div class="flight-times"><span>Monorail + KLIA Express</span><span>共約50分鐘</span></div>
+        <div class="flight-num" style="color:var(--teal-light)">RM57.50/人 · 09:30出發 · 備選：Grab XL RM70–90</div>
+      </div>
+      <div class="flight-card">
+        <div class="flight-date">4/10 LGK機場 → Malibest</div>
+        <div class="flight-route" style="gap:8px;">
+          <span class="flight-iata" style="font-size:18px;">LGK</span>
+          <div class="flight-arrow"><div class="flight-line"></div><span class="flight-plane">🏨</span><div class="flight-line"></div></div>
+          <span class="flight-iata" style="font-size:18px;">Malibest</span>
+        </div>
+        <div class="flight-times"><span>酒店接駁 / Grab</span><span>約8-15分鐘</span></div>
+        <div class="flight-num" style="color:var(--teal-light)">酒店接駁（先確認）或 Grab 約RM20</div>
+      </div>
+      <div class="flight-card">
+        <div class="flight-date">4/13 Malibest → LGK機場</div>
+        <div class="flight-route" style="gap:8px;">
+          <span class="flight-iata" style="font-size:18px;">Malibest</span>
+          <div class="flight-arrow"><div class="flight-line"></div><span class="flight-plane">🚕</span><div class="flight-line"></div></div>
+          <span class="flight-iata" style="font-size:18px;">LGK</span>
+        </div>
+        <div class="flight-times"><span>酒店接駁 / Grab</span><span>約8-15分鐘</span></div>
+        <div class="flight-num" style="color:var(--teal-light)">入住時預約酒店接駁 或 Grab RM20 · 09:15出發</div>
+      </div>
+      <div class="flight-card" style="background:rgba(31,107,95,0.05);border-color:rgba(31,107,95,0.2);">
+        <div class="flight-date" style="color:var(--teal-light)">蘭卡威島內景點</div>
+        <div class="flight-route" style="gap:8px;">
+          <span class="flight-iata" style="font-size:18px;">🗺</span>
+          <div class="flight-arrow"><div class="flight-line"></div><span class="flight-plane">🚗</span><div class="flight-line"></div></div>
+          <span class="flight-iata" style="font-size:18px;">各景點</span>
+        </div>
+        <div class="flight-times"><span>Grab 或包天計程車</span><span>4/11–4/12</span></div>
+        <div class="flight-num" style="color:var(--teal-light)">包天約RM200–250 / 天 · 景點距離遠，不適合捷運</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:14px 18px;background:rgba(31,107,95,0.06);border:1px solid rgba(31,107,95,0.2);font-size:13px;color:var(--teal);line-height:1.8;">
+      💡 <strong>Touch 'n Go 卡提醒</strong>：抵達 KUL 機場後，在入境大廳或便利商店購買 Touch 'n Go 卡（4張），儲值後可直接感應過 KLIA Express 及 Monorail 閘門，省去每次買票的時間，4人一起用非常方便。
+    </div>
+  </div>
+</section>
+
+<!-- HOTELS -->
+<section id="hotels" style="background:var(--dark)">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">🏨 Accommodation</div>
+      <h2 class="section-title">住宿 <em>資訊</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="hotel-grid">
+      <div class="hotel-card">
+        <div class="hotel-city">吉隆坡 · Kuala Lumpur</div>
+        <div class="hotel-name">WOLO Kuala Lumpur</div>
+        <div class="hotel-dates">
+          入住：4月8日（三）<br>
+          退房：4月10日（五）中午 12:00
+        </div>
+        <span class="hotel-tag">武吉免登核心</span>
+        <span class="hotel-tag">步行達商圈</span>
+        <br>
+        <a class="map-btn" href="https://maps.google.com/?q=WOLO+Kuala+Lumpur" target="_blank">📍 Google Maps</a>
+        <a class="map-btn" href="https://wolohotel.com.my" target="_blank" style="margin-left:8px">🌐 官網</a>
+      </div>
+      <div class="hotel-card">
+        <div class="hotel-city">蘭卡威 · Langkawi</div>
+        <div class="hotel-name">Malibest Resort</div>
+        <div class="hotel-dates">
+          入住：4月10日（五）15:00<br>
+          退房：4月13日（一）09:30前<br>
+          房型：Executive Premier Room × 2
+        </div>
+        <span class="hotel-tag">珍南海灘正前方</span>
+        <span class="hotel-tag">4位大人</span>
+        <br>
+        <a class="map-btn" href="https://maps.google.com/?q=Malibest+Resort+Langkawi" target="_blank">📍 Google Maps</a>
+        <a class="map-btn" href="https://www.malibestresort.com" target="_blank" style="margin-left:8px">🌐 官網</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section id="itinerary">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">📅 Day by Day</div>
+      <h2 class="section-title">每日 <em>行程</em></h2>
+      <div class="divider"></div>
+      <p style="margin-top:16px; font-size:13px; color:var(--text-dim); line-height:1.7">
+        🔴 <span style="color:#E74C3C">拍照景點</span> &nbsp;|&nbsp;
+        🚻 <span style="color:var(--teal-light)">廁所位置</span> &nbsp;|&nbsp;
+        🗺 <span style="color:var(--gold)">Google Maps</span> &nbsp;|&nbsp;
+        📷 <span style="color:#E8A89C">攝影建議</span>
+      </p>
+    </div>
+
+    <div class="days-container">
+
+      <!-- DAY 1 -->
+      <div class="day-block open">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-num">01</div>
+          <div class="day-info">
+            <div class="day-date">4月8日（三）</div>
+            <div class="day-title">桃園出發 → 吉隆坡抵達</div>
+          </div>
+          <div class="day-toggle">+</div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">11:15</div>
+              <div class="timeline-title">✈️ JX725 桃園出發</div>
+              <div class="timeline-desc">T1 報到，建議提前 2.5 小時抵達機場。3個29吋行李箱可托運，手提行李放行李架。</div>
+              <div class="tag-row"><span class="tag tag-warn">⚠ 提前2.5小時到機場</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">16:10 → 17:30</div>
+              <div class="timeline-title">🚄 抵達KUL T1 → 搭機場快鐵 + Monorail 入住</div>
+              <div class="timeline-desc">
+                入境提行李後，跟著粉紅色 KLIA Ekspres 標誌搭電梯下到月台，全程無障礙，不用抬行李上下樓梯。<br><br>
+                🚄 <strong>KLIA Express</strong>：KUL T1 → KL Sentral（30分鐘，每20分鐘一班，RM55/人）<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;車廂寬敞、有大型行李架、有廁所、有WiFi，3個大行李箱完全沒問題。<br><br>
+                🚝 <strong>轉 Monorail</strong>：KL Sentral → 武吉免登站（約12分鐘，RM2.50/人）<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;KL Sentral 內步行3-5分鐘至 Monorail 站，有電梯，武吉免登站出站直連商場，步行3分鐘到 WOLO。
+              </div>
+              <div class="tag-row">
+                <span class="tag tag-transit">🚄 KLIA Express RM55/人</span>
+                <span class="tag tag-transit">🚝 Monorail RM2.50/人</span>
+                <span class="tag tag-wc">🚻 兩站均有電梯</span>
+              </div>
+              <div style="margin-top:10px;padding:10px 14px;background:rgba(31,107,95,0.06);border-left:2px solid rgba(31,107,95,0.4);font-size:12px;color:#1F6B5F;line-height:1.7;">
+                💡 <strong>爸爸小提示</strong>：提前在 <a href="https://www.kliaekspres.com" target="_blank" style="color:var(--teal)">kliaekspres.com</a> 網路購票可享9折優惠。Touch 'n Go 卡在機場入境後即可購買，直接感應過閘，免排隊買票。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">19:30</div>
+              <div class="timeline-title">🏮 茨廠街（唐人街）漫步</div>
+              <div class="timeline-desc">有頂棚遮陰、全程平地，感受老KL氣息，買點紀念品。</div>
+              <div class="tag-row">
+                <span class="tag tag-photo">📸 拍照景點</span>
+                <span class="tag tag-wc">🚻 入口處公廁</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                彩色牌樓＋霓虹燈招牌是最佳取景點，建議傍晚藍調時刻（約19:00-19:30）拍攝，光線與燈光最完美。廣角鏡頭可拍出整條街道縱深感。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Petaling+Street+Kuala+Lumpur" target="_blank">🗺 Google Maps</a>
+                <a class="item-link link-ig" href="https://www.instagram.com/explore/tags/petaling_street/" target="_blank">📷 IG #petalingstreet</a>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">20:00</div>
+              <div class="timeline-title">🍽️ 晚餐｜Old China Cafe</div>
+              <div class="timeline-desc">1930年代老茶館，娘惹料理。必點：仁當雞、娘惹沙嗲、西米露。</div>
+              <div class="tag-row">
+                <span class="tag tag-food">🍴 必吃</span>
+                <span class="tag tag-photo">📸 拍照景點</span>
+                <span class="tag tag-wc">🚻 餐廳內有廁所</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                老建築內部充滿復古道具、黑白照片、木質傢俱，是人文攝影的寶庫。用自然光或暖黃燈光拍攝食物特寫，很有老KL風情。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Old+China+Cafe+Kuala+Lumpur" target="_blank">🗺 Google Maps</a>
+                <a class="item-link link-web" href="http://www.oldchina.com.my" target="_blank">🌐 官網</a>
+                <a class="item-link link-ig" href="https://www.instagram.com/explore/tags/oldchinacafe/" target="_blank">📷 IG</a>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">21:30</div>
+              <div class="timeline-title">🌃 KLCC公園｜雙峰塔夜景</div>
+              <div class="timeline-desc">只看外觀不進塔，欣賞音樂噴泉（約21:00開始）。長輩可坐椅子休息欣賞。</div>
+              <div class="tag-row">
+                <span class="tag tag-photo">📸 必拍！全馬最佳夜景</span>
+                <span class="tag tag-wc">🚻 KLCC商場1樓無障礙廁所</span>
+                <span class="tag tag-free">免費入場</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                最佳拍攝位置：KLCC公園噴泉前方正面 / 斜角構圖可同時納入噴泉與雙塔。建議帶腳架（長曝光拍水面倒影）。IG打卡地標：公園入口鐵欄位置，可見完整雙塔構圖。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=KLCC+Park+Kuala+Lumpur" target="_blank">🗺 Google Maps</a>
+                <a class="item-link link-ig" href="https://www.instagram.com/explore/tags/petronastwintowers/" target="_blank">📷 IG #petronastwintowers</a>
+                <a class="item-link link-yt" href="https://www.youtube.com/results?search_query=KLCC+night+photography" target="_blank">▶ YouTube拍攝參考</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day-block">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-num">02</div>
+          <div class="day-info">
+            <div class="day-date">4月9日（四）</div>
+            <div class="day-title">老城 City Walk ＋ ⭐ 國油雙峰塔觀景台</div>
+          </div>
+          <div class="day-toggle">+</div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-time">09:30</div>
+              <div class="timeline-title">🚝 步行至武吉免登 Monorail 站出發</div>
+              <div class="timeline-desc">WOLO步行約5分鐘，站內有電梯，長輩友善。搭Monorail至 KL Sentral，再轉 LRT 至 Pasar Seni 站（茨廠街）。</div>
+              <div class="tag-row">
+                <span class="tag tag-transit">🚝 Monorail + 🚇 LRT</span>
+                <span class="tag tag-transit">全程有電梯 ✅</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                Monorail 高架段可透過車窗拍攝KL市區天際線，快門速度1/500以上避免模糊，靠窗位置取景最佳。
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">10:00 - 11:30</div>
+              <div class="timeline-title">🏮 茨廠街（Petaling Street）漫步</div>
+              <div class="timeline-desc">吉隆坡最著名的華人唐人街。紅燈籠牌樓、百年老店雲集，講廣東話也通。推薦必試：<br>
+              ☕ <strong>茶王</strong>｜恐龍美祿（美祿+大量美祿粉）超濃郁，袋裝提著喝超復古<br>
+              🫙 <strong>義欽豆腐花</strong>｜70年老字號，口感如台灣豆花，點半糖<br>
+              🥛 <strong>羅漢果冬瓜茶</strong>｜消暑涼茶，清熱解渴</div>
+              <div class="tag-row">
+                <span class="tag tag-food">🍴 點心小吃</span>
+                <span class="tag tag-photo">📸 牌樓 & 燈籠</span>
+                <span class="tag tag-wc">🚻 入口處公廁</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                紅色牌樓最佳拍攝時間是早上10點前（人少、光線好）。廣角鏡捕捉整條街道縱深，燈籠串排成天然框架構圖。店家老招牌、懷舊器具都是人文攝影好素材。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Petaling+Street+Kuala+Lumpur" target="_blank">🗺 Google Maps</a>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">11:45 - 13:00</div>
+              <div class="timeline-title">🍽️ 午餐｜碧華樓 Pik Wah Cafe</div>
+              <div class="timeline-desc">米其林必比登推薦老字號，茨廠街上步行可到。必點：燒鴨燒肉雙拼、豬腸粉（甜鹹醬汁香Q滑嫩）、芋頭粿、KAYA吐司、招牌海南茶（茶咖啡奶混合）。口味熟悉，爸爸腸胃完全沒問題。<br><br>⚠️ 建議11:45前抵達，12點後座位難求。</div>
+              <div class="tag-row">
+                <span class="tag tag-food">🍴 米其林必比登</span>
+                <span class="tag tag-wc">🚻 餐廳內有廁所</span>
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Pik+Wah+Cafe+Petaling+Street+KL" target="_blank">🗺 Google Maps</a>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">13:15 - 14:00</div>
+              <div class="timeline-title">🏛️ 中央藝術坊（Central Market）</div>
+              <div class="timeline-desc">1888年歷史建築，室內挑高全冷氣，不怕曬。匯集馬來西亞各族文創商品：蠟染布、手工藝品、紀念品。一樓逛紀念品，二樓傳統服飾。午後最佳休息站，長輩坐下喝杯飲料吹冷氣。</div>
+              <div class="tag-row">
+                <span class="tag tag-free">🏛️ 免費入場</span>
+                <span class="tag tag-wc">🚻 商場內有廁所</span>
+                <span class="tag tag-photo">📸 殖民建築外觀</span>
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Central+Market+Kuala+Lumpur" target="_blank">🗺 Google Maps</a>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">14:00 - 15:00</div>
+              <div class="timeline-title">🇲🇾 獨立廣場 + 蘇丹阿都沙末大廈</div>
+              <div class="timeline-desc">馬來西亞1957年獨立的歷史地標，有全球最高旗桿。對面的<strong>蘇丹阿都沙末大廈</strong>是英殖民時期的摩爾式鐘樓建築，金黃色外觀配藍天，爸爸必拍！<br><br>步行至旁邊的<strong>城市畫廊（KL City Gallery）</strong>，有著名「I ❤ KL」標誌，全家福合照打卡點，裡面可以吹冷氣休息。</div>
+              <div class="tag-row">
+                <span class="tag tag-photo">📸 建築攝影聖地</span>
+                <span class="tag tag-free">免費</span>
+                <span class="tag tag-wc">🚻 城市畫廊內有廁所</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                蘇丹阿都沙末大廈的大鐘樓搭配馬來西亞國旗是必拍構圖。廣場大草坪可拍出寬闊的空間感。建議使用廣角鏡仰拍鐘樓，突顯建築的雄偉氣勢。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Dataran+Merdeka+Kuala+Lumpur" target="_blank">🗺 獨立廣場</a>
+                <a class="item-link link-map" href="https://maps.google.com/?q=KL+City+Gallery" target="_blank">🗺 城市畫廊</a>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">15:30</div>
+              <div class="timeline-title">🏨 返回WOLO休息（長輩必要！）</div>
+              <div class="timeline-desc">Grab 回武吉免登（RM8–12），回飯店休息約1小時補充體力。晚上還有重頭戲——雙峰塔觀景台！</div>
+              <div class="tag-row">
+                <span class="tag tag-warn">⚠ 長輩午睡補體力</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">16:45</div>
+              <div class="timeline-title">🌳 KLCC公園漫步</div>
+              <div class="timeline-desc">步行或捷運至KLCC公園。趁日落前在公園拍攝白天自然光下的雙峰塔與湖面倒影，是日落前黃金光線的最佳時段。長椅多，長輩可坐著休息欣賞。</div>
+              <div class="tag-row">
+                <span class="tag tag-photo">📸 白天雙峰塔倒影</span>
+                <span class="tag tag-free">免費</span>
+                <span class="tag tag-wc">🚻 KLCC商場1樓無障礙廁所</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                公園噴泉前方正面取景，湖面倒影最美。廣角鏡可同時納入雙塔全景＋噴泉＋倒影三層次構圖。日落前黃金光線讓金屬外牆呈現溫暖色調，比正午好看十倍。
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">17:30 - 19:30</div>
+              <div class="timeline-title">⭐ 國油雙峰塔觀景台</div>
+              <div class="timeline-desc">世界最高雙子塔，已預訂 17:30 場次。<br><br>
+              🌉 <strong>41樓空中走廊（170m）</strong>｜世界最高人行天橋，停留約15分鐘，欣賞傍晚光線下的KL全景<br>
+              🌆 <strong>86樓觀景台（370m）</strong>｜再停留約15-20分鐘，日落19:25，天黑後燈光全亮✨<br><br>
+              ⚠️ 入場需掃描隨身物品，大型行李、腳架、自拍棒不可攜入。相機可帶入。</div>
+              <div class="tag-row">
+                <span class="tag tag-photo">📸 KL最強夜景視角</span>
+                <span class="tag tag-warn">⚠ 已訂票 17:30</span>
+                <span class="tag tag-wc">🚻 塔內各層有廁所</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                41樓空橋：傍晚黃金光線俯瞰KL市區，快門速度需1/250以上（室外光足夠）。86樓觀景台：天黑後長曝光拍車軌與燈海，ISO不超過1600，光圈f/5.6以上保持景深。19:25日落後約20分鐘是城市燈光全亮的最佳拍攝時機。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Petronas+Twin+Towers+Kuala+Lumpur" target="_blank">🗺 Google Maps</a>
+                <a class="item-link link-web" href="https://eticket.petronastwintowers.com.my/" target="_blank">🌐 官方訂票網站</a>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">20:00 - 21:30</div>
+              <div class="timeline-title">🍢 晚餐｜亞羅街美食街</div>
+              <div class="timeline-desc">Grab 從KLCC至亞羅街約10分鐘（RM8-12）。必吃：烤雞翅、沙嗲、炒粿條、海鮮。建議8點前到，人潮開始多但還不至於擠爆，較涼快。</div>
+              <div class="tag-row">
+                <span class="tag tag-food">🍴 必吃夜市</span>
+                <span class="tag tag-photo">📸 霓虹夜景</span>
+                <span class="tag tag-wc">🚻 建議用旁邊Star Hill Gallery廁所</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                霓虹招牌＋人群熱鬧感是亞羅街的靈魂。炭烤雞翅的炭火特寫很有魄力。用手機HDR模式平衡亮暗部，捕捉街道景深。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Jalan+Alor+Food+Street+KL" target="_blank">🗺 Google Maps</a>
+                <a class="item-link link-ig" href="https://www.instagram.com/explore/tags/jalanalor/" target="_blank">📷 IG #jalanalor</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="day-block">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-num">03</div>
+          <div class="day-info">
+            <div class="day-date">4月10日（五）</div>
+            <div class="day-title">退房 → 購物 → 飛蘭卡威</div>
+          </div>
+          <div class="day-toggle">+</div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">09:30</div>
+              <div class="timeline-title">🏨 退房、行李寄存</div>
+              <div class="timeline-desc">輕裝去購物，行李寄存飯店。</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10:00 - 11:00</div>
+              <div class="timeline-title">🛍️ Suria KLCC 購物</div>
+              <div class="timeline-desc">全冷氣、有電梯。KL買：品牌服飾、藥妝。⚠️ 免稅品留蘭卡威買，那邊更便宜！</div>
+              <div class="tag-row">
+                <span class="tag tag-wc">🚻 商場各層均有廁所</span>
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Suria+KLCC+Kuala+Lumpur" target="_blank">🗺 Google Maps</a>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">11:55</div>
+              <div class="timeline-title">🚝 Monorail + 機捷 → KUL機場 → ✈️ MH1438</div>
+              <div class="timeline-desc">
+                行李從飯店寄存取回後出發。<br><br>
+                🚝 <strong>Monorail</strong>：武吉免登 → KL Sentral（約12分鐘，RM2.50/人）<br>
+                🚄 <strong>KLIA Express</strong>：KL Sentral → KUL T1（30分鐘，RM55/人）<br>
+                全程有電梯，行李架夠大，建議 <strong>09:30 從飯店出發</strong>，10:00前抵達機場。<br><br>
+                ⚠️ 若覺得帶3個大行李搭車麻煩，也可直接在KL Sentral外叫 <strong>Grab XL</strong> 到機場（約RM70–90，45分鐘）。
+              </div>
+              <div class="tag-row">
+                <span class="tag tag-transit">🚝 武吉免登 → KL Sentral RM2.50</span>
+                <span class="tag tag-transit">🚄 KL Sentral → KUL T1 RM55</span>
+                <span class="tag tag-warn">⚠ 09:30出發、10:00前到機場</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">13:05 → 15:00</div>
+              <div class="timeline-title">🛬 抵達蘭卡威 LGK → 入住 Malibest Resort</div>
+              <div class="timeline-desc">
+                蘭卡威機場距 Malibest Resort 僅約5公里，車程8-15分鐘。<br><br>
+                🏨 <strong>選項一（推薦）：酒店接駁</strong> — Malibest Resort 提供機場接駁服務，入住前聯絡酒店確認（+60 4-955 8202）<br>
+                🚕 <strong>選項二：Grab 或計程車</strong> — 費用約 RM20–25，機場出來即有計程車排班，Grab 也可使用。
+              </div>
+              <div class="tag-row">
+                <span class="tag tag-transit">🏨 酒店接駁（建議提前確認）</span>
+                <span class="tag tag-transit">🚕 Grab 約 RM20</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">17:00 - 18:30</div>
+              <div class="timeline-title">🌅 珍南海灘看夕陽</div>
+              <div class="timeline-desc">就在飯店門口，長輩輕鬆欣賞安達曼海黃金夕陽。</div>
+              <div class="tag-row">
+                <span class="tag tag-photo">📸 夕陽必拍</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                蘭卡威西面海灘夕陽是馬來西亞最美之一！日落前30分鐘黃金時刻（Golden Hour）光線最迷人。剪影攝影：讓家人站在夕陽前，拍攝全家福剪影，非常感動。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Pantai+Cenang+Langkawi" target="_blank">🗺 Google Maps</a>
+                <a class="item-link link-ig" href="https://www.instagram.com/explore/tags/pantaicenang/" target="_blank">📷 IG #pantaicenang</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="day-block">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-num">04</div>
+          <div class="day-info">
+            <div class="day-date">4月11日（六）</div>
+            <div class="day-title">蘭卡威空中纜車日</div>
+          </div>
+          <div class="day-toggle">+</div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">09:30 - 12:00</div>
+              <div class="timeline-title">🚡 蘭卡威空中纜車</div>
+              <div class="timeline-desc">長輩只需坐纜車到頂部觀景台，跳過需爬300階的Sky Bridge。頂部有座椅、小食攤、360度絕景。⚠️ 週三12:30才開放，建議週四至週日前往。</div>
+              <div class="tag-row">
+                <span class="tag tag-photo">📸 全島最佳鳥瞰景</span>
+                <span class="tag tag-wc">🚻 山腳及山頂均有廁所</span>
+                <span class="tag tag-warn">⚠ 提前網路購票</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                山頂可俯瞰整個蘭卡威島與安達曼海，晴天能見鄰近泰國小島。纜車玻璃廂透明拍攝山林景觀很壯觀。建議早上9:30人少光線好，雲霧繚繞時更有神秘感。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Langkawi+Cable+Car+SkyCab" target="_blank">🗺 Google Maps</a>
+                <a class="item-link link-web" href="https://panoramalangkawi.com/skycab/" target="_blank">🌐 官網購票</a>
+                <a class="item-link link-ig" href="https://www.instagram.com/explore/tags/langkawiskycab/" target="_blank">📷 IG</a>
+                <a class="item-link link-yt" href="https://www.youtube.com/results?search_query=Langkawi+Cable+Car+view" target="_blank">▶ 景觀參考</a>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">13:00 - 16:00</div>
+              <div class="timeline-title">🍽️ 午餐｜Yellow Cafe 或 Barn Thai + 午休</div>
+              <div class="timeline-desc">珍南海灘旁在地馬來料理。飯後回飯店午休1.5小時（長輩必要）。</div>
+              <div class="tag-row">
+                <span class="tag tag-food">🍴 午餐</span>
+                <span class="tag tag-wc">🚻 餐廳內有廁所</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">18:30 - 20:30</div>
+              <div class="timeline-title">🦐 晚餐｜Orkid Ria 海鮮餐廳</div>
+              <div class="timeline-desc">必點：奶油老虎蝦、清蒸石斑、椰青。環境舒適有冷氣。⚠️ 建議提前訂位。</div>
+              <div class="tag-row">
+                <span class="tag tag-food">🍴 必吃海鮮</span>
+                <span class="tag tag-wc">🚻 餐廳內有廁所</span>
+                <span class="tag tag-warn">⚠ 需提前訂位 +60 17-614 4128</span>
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Orkid+Ria+Seafood+Langkawi" target="_blank">🗺 Google Maps</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 5 -->
+      <div class="day-block">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-num">05</div>
+          <div class="day-info">
+            <div class="day-date">4月12日（日）</div>
+            <div class="day-title">🐊 鱷魚冒險樂園 + 免稅購物 + 特別晚餐</div>
+          </div>
+          <div class="day-toggle">+</div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">09:00 - 12:00</div>
+              <div class="timeline-title">🐊 鱷魚冒險樂園 Crocodile Adventureland</div>
+              <div class="timeline-desc">蘭卡威最大鱷魚主題樂園，近4,000隻鱷魚，全程陸地參觀，完全不搭船！精彩表演：<br><br>
+              🐊 <strong>跳躍鱷魚秀</strong>（10:00）｜大鱷 <strong>Bujang Lang 餵食秀</strong>（11:15）— 馬來西亞最大鱷魚，重達450公斤<br>
+              🦕 <strong>恐龍機器人秀</strong>（12:00）— 50呎史前鱷魚動態機器人，超震撼<br>
+              📸 <strong>幼鱷抱抱拍照</strong> — 可近距離合影留念<br><br>
+              建議9:30抵達趕上第一場，約2-3小時逛完。園內有咖啡廳可休息吹冷氣。</div>
+              <div class="tag-row">
+                <span class="tag tag-photo">📸 動物攝影</span>
+                <span class="tag tag-transit">✅ 全陸地 不搭船</span>
+                <span class="tag tag-wc">🚻 園區內有廁所</span>
+                <span class="tag tag-warn">💰 約RM85/人</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                鱷魚跳躍瞬間是最難得的畫面，建議連拍模式、快門1/2000以上凍結動態。幼鱷抱抱是家庭合照的絕佳機會。恐龍機器人體型龐大，廣角鏡頭拍出震撼感。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Crocodile+Adventureland+Langkawi" target="_blank">🗺 Google Maps</a>
+                <a class="item-link link-web" href="https://www.kkday.com/zh-tw/product/130244" target="_blank">🌐 KKday 購票</a>
+                <a class="item-link link-ig" href="https://www.instagram.com/crocodileadventureland/" target="_blank">📷 IG</a>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">13:00 - 16:30</div>
+              <div class="timeline-title">🛒 Haji Ismail 免稅商場 + 老鷹廣場</div>
+              <div class="timeline-desc">蘭卡威最大免稅商場。必買：巧克力、酒類、香水、燕窩。旁邊老鷹廣場（Eagle Square）可拍蘭卡威地標。</div>
+              <div class="tag-row">
+                <span class="tag tag-photo">📸 老鷹廣場地標</span>
+                <span class="tag tag-wc">🚻 商場內有廁所</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                老鷹廣場（Dataran Lang）是蘭卡威的象徵，巨型老鷹雕像配上海港背景，是必拍地標照。建議下午光線側打，立體感最強。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Haji+Ismail+Group+Langkawi" target="_blank">🗺 Haji Ismail</a>
+                <a class="item-link link-map" href="https://maps.google.com/?q=Eagle+Square+Langkawi" target="_blank">🗺 老鷹廣場</a>
+                <a class="item-link link-ig" href="https://www.instagram.com/explore/tags/eaglesquarelangkawi/" target="_blank">📷 IG</a>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">19:00 - 21:00</div>
+              <div class="timeline-title">🌿 特別晚餐｜Bon Ton Resort</div>
+              <div class="timeline-desc">120年馬來木屋改建，燭光氛圍，在地食材精緻馬來料理。⚠️ 必須提前預訂！</div>
+              <div class="tag-row">
+                <span class="tag tag-food">🍴 特別晚餐</span>
+                <span class="tag tag-photo">📸 氛圍攝影</span>
+                <span class="tag tag-wc">🚻 餐廳內有廁所</span>
+                <span class="tag tag-warn">⚠ 必須提前訂位 +60 4-955 3643</span>
+              </div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                古老馬來木屋的溫暖燈光＋熱帶植物庭院是絕美場景。夜晚燭光搭配木造建築紋理，拍出電影感質感照。建議ISO 3200以內，自然燭光拍攝家庭合照，暖意十足。
+              </div>
+              <div class="item-links">
+                <a class="item-link link-map" href="https://maps.google.com/?q=Bon+Ton+Resort+Langkawi" target="_blank">🗺 Google Maps</a>
+                <a class="item-link link-web" href="http://www.bontonresort.com.my" target="_blank">🌐 官網訂位</a>
+                <a class="item-link link-ig" href="https://www.instagram.com/explore/tags/bontonresort/" target="_blank">📷 IG</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 6 -->
+      <div class="day-block">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-num">06</div>
+          <div class="day-info">
+            <div class="day-date">4月13日（一）</div>
+            <div class="day-title">退房 → KUL機場 → 回台灣</div>
+          </div>
+          <div class="day-toggle">+</div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">07:00</div>
+              <div class="timeline-title">🌅 最後早餐｜珍南海灘晨景</div>
+              <div class="timeline-desc">在飯店吃早餐，欣賞珍南海灘清晨的寧靜海景。</div>
+              <div class="tag-row"><span class="tag tag-photo">📸 清晨海景，人少光美</span></div>
+              <div class="photo-tip">
+                <strong>📷 爸爸拍照建議</strong>
+                清晨6-7點是海灘「藍調時刻」（Blue Hour），海面反光如鏡，遠比白天更夢幻。用腳架長曝光拍攝浪花軌跡，留下完美旅程最後記憶。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">09:00</div>
+              <div class="timeline-title">🏨 整理行李 → 辦理退房</div>
+              <div class="timeline-desc">⚠️ 退房時間12:00，但班機11:15起飛，需提早退房。建議09:00前辦好。</div>
+              <div class="tag-row"><span class="tag tag-warn">⚠ 09:00前退房完畢</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">09:15</div>
+              <div class="timeline-title">🚕 前往蘭卡威機場 LGK</div>
+              <div class="timeline-desc">
+                機場距飯店僅5公里，車程約8-15分鐘，非常近！<br><br>
+                🏨 <strong>選項一：酒店接駁</strong> — 入住時向 Malibest 前台預約，最方便<br>
+                🚕 <strong>選項二：Grab 或計程車</strong> — 費用約 RM20–25，叫車前先備好現金
+              </div>
+              <div class="tag-row">
+                <span class="tag tag-transit">🏨 酒店接駁（需提前預約）</span>
+                <span class="tag tag-transit">🚕 Grab 約 RM20</span>
+                <span class="tag tag-warn">⚠ MH1433 11:15起飛，10:00前到機場</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">12:30 - 17:00</div>
+              <div class="timeline-title">🛍️ KUL機場T1免稅區</div>
+              <div class="timeline-desc">抵達KUL後有充裕時間在T1免稅區購物、用午餐。精品、化妝品、伴手禮最後採購。</div>
+              <div class="tag-row"><span class="tag tag-wc">🚻 機場廁所設施完善</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">17:20</div>
+              <div class="timeline-title">✈️ JX726 KUL → TPE，22:15回到桃園</div>
+              <div class="timeline-desc">旅程圓滿結束！</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end days-container -->
+  </div>
+</section>
+
+<!-- SHOPPING -->
+<section id="shopping">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">🛒 Duty Free</div>
+      <h2 class="section-title">免稅 <em>購物攻略</em></h2>
+      <div class="divider"></div>
+      <p style="margin-top:16px; font-size:13px; color:var(--gold)">💡 價格比較：蘭卡威 &lt; KUL機場 &lt; 吉隆坡市區。重點採購留蘭卡威！</p>
+    </div>
+    <div class="shopping-grid">
+      <div class="shop-card">
+        <div class="shop-icon">🍫</div>
+        <div class="shop-name">Haji Ismail 免稅商場</div>
+        <div class="shop-loc">蘭卡威 · 庫阿鎮</div>
+        <div class="shop-items">巧克力（種類最齊全）<br>酒類、香水<br>燕窩、紀念品</div>
+        <a class="map-btn" href="https://maps.google.com/?q=Haji+Ismail+Langkawi" target="_blank" style="margin-top:12px">📍 地圖</a>
+      </div>
+      <div class="shop-card">
+        <div class="shop-icon">🍷</div>
+        <div class="shop-name">Cenang Mall 免稅店</div>
+        <div class="shop-loc">蘭卡威 · 珍南海灘旁</div>
+        <div class="shop-items">酒類（價格驚人便宜）<br>零食、飲料<br>就在飯店附近，方便！</div>
+        <a class="map-btn" href="https://maps.google.com/?q=Cenang+Mall+Langkawi" target="_blank" style="margin-top:12px">📍 地圖</a>
+      </div>
+      <div class="shop-card">
+        <div class="shop-icon">💊</div>
+        <div class="shop-name">Suria KLCC / Pavilion</div>
+        <div class="shop-loc">吉隆坡 · 武吉免登</div>
+        <div class="shop-items">品牌服飾、球鞋<br>藥妝（Watsons / Guardian）<br>特色手信</div>
+        <a class="map-btn" href="https://maps.google.com/?q=Suria+KLCC" target="_blank" style="margin-top:12px">📍 地圖</a>
+      </div>
+      <div class="shop-card">
+        <div class="shop-icon">🏪</div>
+        <div class="shop-name">KUL機場 T1 免稅區</div>
+        <div class="shop-loc">回程等機時</div>
+        <div class="shop-items">精品（LV / Gucci）<br>化妝品、香水<br>馬來西亞伴手禮</div>
+        <a class="map-btn" href="https://maps.google.com/?q=KLIA+Terminal+1" target="_blank" style="margin-top:12px">📍 地圖</a>
+      </div>
+    </div>
+    <div style="margin-top:24px; padding:20px 24px; background:rgba(201,168,76,0.06); border:1px solid rgba(201,168,76,0.2);">
+      <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:2px; color:var(--gold); margin-bottom:12px">🧳 採購清單</div>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:12px; color:var(--text-dim)">
+        <span>✅ 巧克力（Beryl's / Cadbury）</span>
+        <span>✅ 酒類（需用免稅袋密封帶回）</span>
+        <span>✅ 燕窩</span>
+        <span>✅ 馬來西亞白咖啡</span>
+        <span>✅ 香水 / 化妝品</span>
+        <span>✅ 手工藝品</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WC -->
+<section id="wc">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">🚻 Restroom Guide</div>
+      <h2 class="section-title">廁所 <em>位置速查</em></h2>
+      <div class="divider"></div>
+      <p style="margin-top:16px; font-size:13px; color:var(--teal-light)">媽媽專用版 · 每個景點廁所位置全標示</p>
+    </div>
+    <div class="wc-grid">
+      <div class="wc-item"><div class="wc-icon">🏮</div><div><div class="wc-spot">茨廠街</div><div class="wc-desc">街道入口處公共廁所</div></div></div>
+      <div class="wc-item"><div class="wc-icon">🚇</div><div><div class="wc-spot">KL Sentral 捷運站</div><div class="wc-desc">站內付費廁所，Monorail轉LRT時使用</div></div></div>
+      <div class="wc-item"><div class="wc-icon">🍽️</div><div><div class="wc-spot">Old China Cafe</div><div class="wc-desc">餐廳內，乾淨</div></div></div>
+      <div class="wc-item"><div class="wc-icon">🌃</div><div><div class="wc-spot">KLCC公園</div><div class="wc-desc">KLCC商場1樓，無障礙廁所</div></div></div>
+      <div class="wc-item"><div class="wc-icon">🏛️</div><div><div class="wc-spot">伊斯蘭藝術博物館</div><div class="wc-desc">每層均有，寬敞乾淨</div></div></div>
+      <div class="wc-item"><div class="wc-icon">🦚</div><div><div class="wc-spot">KL鳥類公園</div><div class="wc-desc">入口處及園區中段各一處</div></div></div>
+      <div class="wc-item"><div class="wc-icon">🍢</div><div><div class="wc-spot">亞羅街</div><div class="wc-desc">建議用旁邊Star Hill Gallery免費冷氣廁所</div></div></div>
+      <div class="wc-item"><div class="wc-icon">🚡</div><div><div class="wc-spot">蘭卡威纜車</div><div class="wc-desc">山腳售票處及山頂均有</div></div></div>
+      <div class="wc-item"><div class="wc-icon">🚤</div><div><div class="wc-spot">吉林紅樹林公園</div><div class="wc-desc">⚠️ 入口售票處有，上船前必先如廁！</div></div></div>
+      <div class="wc-item"><div class="wc-icon">🛒</div><div><div class="wc-spot">Haji Ismail商場</div><div class="wc-desc">商場內有</div></div></div>
+      <div class="wc-item"><div class="wc-icon">🌿</div><div><div class="wc-spot">Bon Ton 餐廳</div><div class="wc-desc">餐廳內有</div></div></div>
+      <div class="wc-item"><div class="wc-icon">✈️</div><div><div class="wc-spot">KUL / LGK 機場</div><div class="wc-desc">各處皆有，設施完善</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAVEL TIPS -->
+<section id="traveltips" style="background:var(--dark2); border-top:1px solid rgba(154,111,42,0.12);">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">📋 Travel Essentials</div>
+      <h2 class="section-title">出發前 <em>必知資訊</em></h2>
+      <div class="divider"></div>
+    </div>
+
+    <!-- 1. 簽證 -->
+    <div style="margin-bottom:56px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+        <div style="font-size:28px;">🛂</div>
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);">VISA</div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--cream);">簽證與入境規定</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(42,124,111,0.08);border:1px solid rgba(42,124,111,0.3);padding:20px 24px;margin-bottom:20px;">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--teal-light);margin-bottom:10px;">✅ 結論：台灣護照免簽，無需辦理任何簽證</div>
+        <div style="font-size:13px;color:var(--text-dim);line-height:1.9;">
+          自2015年起，持台灣護照前往馬來西亞旅遊享有<strong style="color:var(--cream);">30天免簽</strong>待遇，吉隆坡到蘭卡威的國內線段同樣不需額外簽證。此行6天完全在免簽範圍內，無須任何申請。
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:20px;">
+        <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.12);padding:18px 20px;">
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);margin-bottom:10px;">📄 必備文件</div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.9;">
+            ✅ 護照有效期限 <strong style="color:var(--cream);">6個月以上</strong>（4人均需確認）<br>
+            ✅ 來回機票訂購明細<br>
+            ✅ 住宿訂房確認信<br>
+            ✅ MDAC 數位入境卡（見下方）
+          </div>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.12);padding:18px 20px;">
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);margin-bottom:10px;">📱 MDAC 數位入境卡</div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.9;">
+            入境前 <strong style="color:#E74C3C;">3天內</strong> 線上填寫，4人各填各的<br>
+            填好後走<strong style="color:var(--cream);">自動通關（Autogate）</strong>，免排人工隊<br>
+            ⚠️ 65歲長輩若未曾入境過，需走人工通關採集指紋一次，之後才能用自動通關
+          </div>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.12);padding:18px 20px;">
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);margin-bottom:10px;">⚠️ 入境注意事項</div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.9;">
+            財力證明建議每人每天約<strong style="color:var(--cream);">100美元</strong>（偶爾抽查）<br>
+            攜帶信用卡或適量現金即可應付<br>
+            攜帶酒類入境：每人限帶 <strong style="color:var(--cream);">1公升</strong> 酒精飲料
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <a class="item-link link-web" href="https://iqa.immigration.gov.my/mdac" target="_blank" style="font-size:11px;">📱 MDAC官方申請網站</a>
+        <a class="item-link link-web" href="https://www.promotemalaysia.com.tw/about_visa.aspx" target="_blank" style="font-size:11px;">🌐 馬來西亞觀光局簽證資訊</a>
+        <a class="item-link link-web" href="https://ianchen.life/mdac-application-malaysia/" target="_blank" style="font-size:11px;">📖 MDAC詳細填寫教學（中文）</a>
+      </div>
+    </div>
+
+    <!-- 2. 換錢 -->
+    <div style="margin-bottom:56px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+        <div style="font-size:28px;">💱</div>
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);">CURRENCY</div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--cream);">換錢攻略</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);padding:20px 24px;margin-bottom:20px;">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;">💡 匯率參考（浮動，出發前查詢最新）</div>
+        <div style="font-size:13px;color:var(--text-dim);">1,000 台幣 ≈ <strong style="color:var(--cream);font-size:16px;">140–150 馬幣（RM）</strong>，實際依各換錢方式有差異</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">
+
+        <div style="background:#FFFFFF;border:1px solid rgba(176,48,32,0.2);padding:18px 20px;">
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:#E74C3C;margin-bottom:8px;">❌ 最不划算</div>
+          <div style="font-size:13px;color:var(--cream);font-weight:600;margin-bottom:6px;">台灣銀行換</div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.7;">台灣銀行、兆豐銀行或桃園機場<br>手續費高，匯率最差<br>僅建議換 1,000–2,000 台幣應急用</div>
+        </div>
+
+        <div style="background:#FFFFFF;border:1px solid rgba(196,154,60,0.3);padding:18px 20px;">
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:orange;margin-bottom:8px;">⚠️ 尚可</div>
+          <div style="font-size:13px;color:var(--cream);font-weight:600;margin-bottom:6px;">KUL機場換錢所</div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.7;">入境後提領行李途中可換<br>方便但匯率普通<br>適合換小額應急（RM200-300）</div>
+        </div>
+
+        <div style="background:#FFFFFF;border:1px solid rgba(31,107,95,0.25);padding:18px 20px;">
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--teal-light);margin-bottom:8px;">✅ 最划算</div>
+          <div style="font-size:13px;color:var(--cream);font-weight:600;margin-bottom:6px;">市區換錢所（Money Changer）</div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.7;">各大商場、購物中心內均有<br>直接用台幣換馬幣，匯率最好<br>吉隆坡武吉免登商圈最多選擇</div>
+        </div>
+
+        <div style="background:#FFFFFF;border:1px solid rgba(31,107,95,0.25);padding:18px 20px;">
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--teal-light);margin-bottom:8px;">✅ 方便</div>
+          <div style="font-size:13px;color:var(--cream);font-weight:600;margin-bottom:6px;">信用卡 / Debit卡</div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.7;">大型餐廳、商場、飯店均可刷卡<br>免換錢手續<br>小攤、廁所費、包車需現金</div>
+        </div>
+
+      </div>
+
+      <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.15);padding:20px 24px;">
+        <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);margin-bottom:12px;">📊 建議換錢策略（4人6天）</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;font-size:12px;color:var(--text-dim);line-height:1.8;">
+          <div>
+            <div style="color:var(--cream);font-weight:600;margin-bottom:4px;">出發前（台灣）</div>
+            換 NT$2,000–3,000 備用<br>（到機場打車、機上買水等應急）
+          </div>
+          <div>
+            <div style="color:var(--cream);font-weight:600;margin-bottom:4px;">KUL機場（入境後）</div>
+            換 RM200–300 即可<br>（包車、第一晚餐飲）
+          </div>
+          <div>
+            <div style="color:var(--cream);font-weight:600;margin-bottom:4px;">吉隆坡市區</div>
+            找市區換錢所換主要用量<br>（約 RM1,500–2,000/4人）
+          </div>
+          <div>
+            <div style="color:var(--cream);font-weight:600;margin-bottom:4px;">蘭卡威</div>
+            景點周邊也有換錢所<br>免稅購物建議刷卡，節省現金
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:12px 16px;background:rgba(42,124,111,0.08);border-left:2px solid var(--teal);font-size:12px;color:var(--text-dim);">
+          💡 <strong style="color:var(--teal-light);">小額現金必備</strong>：廁所費（RM0.50）、街邊小吃、路邊停車、小費等場合只收現金。建議每人隨身備 RM50–100 小鈔零錢。
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 保險 -->
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+        <div style="font-size:28px;">🛡️</div>
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);">INSURANCE</div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--cream);">旅遊保險建議</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(192,57,43,0.06);border:1px solid rgba(192,57,43,0.2);padding:16px 20px;margin-bottom:20px;font-size:13px;color:#E8A89C;line-height:1.8;">
+        ⚠️ <strong>特別提醒：</strong>行程中有65歲長輩同行，強烈建議購買保障額度較高的保險。馬來西亞醫療費用雖相對低廉，但緊急後送、住院等費用仍可能相當昂貴。以下為建議投保項目，實際條款請以各保險公司為準，建議出發前至少 <strong>5個工作天</strong> 完成投保。
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px;">
+
+        <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.15);padding:20px 22px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div style="font-size:15px;color:var(--cream);font-weight:600;">旅遊平安險（旅平險）</div>
+            <span style="font-family:'Space Mono',monospace;font-size:9px;padding:3px 8px;background:rgba(231,76,60,0.15);border:1px solid rgba(231,76,60,0.3);color:#E74C3C;">必保</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.9;">
+            <strong style="color:var(--cream);">保障內容：</strong>意外身故、失能、傷害醫療<br>
+            <strong style="color:var(--cream);">建議保額：</strong>一般成人 500萬，長輩 300萬以上<br>
+            <strong style="color:var(--cream);">含海外突發疾病保障</strong>尤其重要<br>
+            <strong style="color:var(--cream);">東南亞旅遊建議：</strong>確認是否涵蓋登革熱等法定傳染病
+          </div>
+        </div>
+
+        <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.15);padding:20px 22px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div style="font-size:15px;color:var(--cream);font-weight:600;">旅遊不便險</div>
+            <span style="font-family:'Space Mono',monospace;font-size:9px;padding:3px 8px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);color:var(--gold);">強烈建議</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.9;">
+            <strong style="color:var(--cream);">保障內容：</strong>班機延誤/取消、行李延誤/遺失<br>
+            旅程取消（需退款時）、護照遺失費用<br>
+            <strong style="color:var(--cream);">特別適合：</strong>此行有KUL轉蘭卡威的中轉班機<br>
+            班機延誤4小時通常即可申請理賠
+          </div>
+        </div>
+
+        <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.15);padding:20px 22px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div style="font-size:15px;color:var(--cream);font-weight:600;">緊急救援費用</div>
+            <span style="font-family:'Space Mono',monospace;font-size:9px;padding:3px 8px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);color:var(--gold);">長輩必保</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.9;">
+            緊急醫療後送回台費用（可達數十萬）<br>
+            <strong style="color:var(--cream);">南山產險</strong> 此項目保額高達300萬<br>
+            65歲長輩建議優先確認此項目額度<br>
+            蘭卡威醫療資源有限，後送費用尤其重要
+          </div>
+        </div>
+
+        <div style="background:#FFFFFF;border:1px solid rgba(31,107,95,0.15);padding:20px 22px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div style="font-size:15px;color:var(--cream);font-weight:600;">信用卡附贈保險確認</div>
+            <span style="font-family:'Space Mono',monospace;font-size:9px;padding:3px 8px;background:rgba(42,124,111,0.12);border:1px solid rgba(42,124,111,0.3);color:var(--teal-light);">先確認</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.9;">
+            部分信用卡（如聯邦鈦金卡、國泰世華）購機票即附旅遊保險<br>
+            建議先確認信用卡附贈保障範圍與額度<br>
+            通常不夠全面，尤其<strong style="color:var(--cream);">長輩醫療額度</strong>較低<br>
+            建議再加購獨立旅平險補強
+          </div>
+        </div>
+
+      </div>
+
+      <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.12);padding:20px 24px;margin-bottom:20px;">
+        <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);margin-bottom:16px;">📊 台灣熱門旅平險比較（2026）</div>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:12px;color:var(--text-dim);">
+            <thead>
+              <tr style="border-bottom:1px solid rgba(201,168,76,0.2);">
+                <th style="text-align:left;padding:8px 10px;color:var(--cream);">保險公司</th>
+                <th style="text-align:center;padding:8px 10px;">5天保費參考</th>
+                <th style="text-align:center;padding:8px 10px;">法定傳染病</th>
+                <th style="text-align:center;padding:8px 10px;">長輩年齡上限</th>
+                <th style="text-align:center;padding:8px 10px;">投保方式</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+                <td style="padding:10px;color:var(--cream);font-weight:600;">富邦產險</td>
+                <td style="text-align:center;padding:10px;">約 NT$700–900</td>
+                <td style="text-align:center;padding:10px;color:#E74C3C;">需確認</td>
+                <td style="text-align:center;padding:10px;">79歲</td>
+                <td style="text-align:center;padding:10px;">線上</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+                <td style="padding:10px;color:var(--cream);font-weight:600;">國泰產險</td>
+                <td style="text-align:center;padding:10px;">約 NT$800–1,000</td>
+                <td style="text-align:center;padding:10px;color:#E74C3C;">需確認</td>
+                <td style="text-align:center;padding:10px;">79歲</td>
+                <td style="text-align:center;padding:10px;">線上</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+                <td style="padding:10px;color:var(--cream);font-weight:600;">旺旺友聯</td>
+                <td style="text-align:center;padding:10px;">約 NT$600–800</td>
+                <td style="text-align:center;padding:10px;color:var(--teal-light);">✅ 含</td>
+                <td style="text-align:center;padding:10px;">79歲</td>
+                <td style="text-align:center;padding:10px;">線上</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+                <td style="padding:10px;color:var(--cream);font-weight:600;">安達產險</td>
+                <td style="text-align:center;padding:10px;">約 NT$900–1,200</td>
+                <td style="text-align:center;padding:10px;color:var(--teal-light);">✅ 含</td>
+                <td style="text-align:center;padding:10px;">79歲</td>
+                <td style="text-align:center;padding:10px;">線上</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;color:var(--cream);font-weight:600;">南山產險</td>
+                <td style="text-align:center;padding:10px;">約 NT$1,000–1,500</td>
+                <td style="text-align:center;padding:10px;color:var(--teal-light);">✅ 含</td>
+                <td style="text-align:center;padding:10px;">79歲</td>
+                <td style="text-align:center;padding:10px;">線上</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:12px;font-size:11px;color:var(--text-dim);">⚠️ 以上保費僅供參考，實際保費依年齡、保額、保障內容而定。65歲長輩保費通常高於一般成人。請以各官網最新報價為準，本資訊不構成保險建議。</p>
+      </div>
+
+      <div style="background:rgba(192,57,43,0.06);border-left:3px solid rgba(192,57,43,0.5);padding:16px 20px;">
+        <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:#E74C3C;margin-bottom:10px;">⚠️ 65歲長輩特別注意</div>
+        <div style="font-size:13px;color:var(--text-dim);line-height:1.9;">
+          部分保險公司對65歲以上投保人設有<strong style="color:var(--cream);">保額上限或費率調整</strong>，且某些舊有疾病引發的就醫可能不在理賠範圍。投保前務必：<br>
+          1. 確認投保年齡上限（多數為79歲）<br>
+          2. 確認長輩有無既有病史影響理賠範圍<br>
+          3. 確認海外突發疾病保額是否足夠<br>
+          4. 確認緊急後送費用額度
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;">
+        <a class="item-link link-web" href="https://polida.com.tw/post/travel-insurance-compare" target="_blank" style="font-size:11px;">📊 2026旅平險比較總整理</a>
+        <a class="item-link link-web" href="https://finfo.tw/prod_cates/travel-insurance" target="_blank" style="font-size:11px;">🔍 旅遊不便險說明</a>
+        <a class="item-link link-web" href="https://www.cathay-ins.com.tw/INSEBWeb/travel-insurance/travel-insurance-oversea/prompt" target="_blank" style="font-size:11px;">🌐 國泰產險線上投保</a>
+        <a class="item-link link-web" href="https://www.msig-mingtai.com.tw/MobileWeb/blog/insurance/travel-01/" target="_blank" style="font-size:11px;">🌐 明台產險旅平險說明</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LUGGAGE -->
+<section id="luggage" style="background:var(--dark);">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">🧳 Packing Guide</div>
+      <h2 class="section-title">行李準備 <em>建議</em></h2>
+      <div class="divider"></div>
+    </div>
+
+    <!-- 天氣預測 -->
+    <div style="margin-bottom:40px;">
+      <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:20px;">☀️ 4月天氣預測</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:16px;">
+
+        <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.15);padding:20px 24px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);margin-bottom:12px;">🏙️ 吉隆坡 4/8–10</div>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+            <div style="font-family:'Playfair Display',serif;font-size:40px;color:#E8832A;">33°</div>
+            <div style="font-size:12px;color:var(--text-dim);line-height:1.8;">
+              日間最高 <strong style="color:var(--cream);">32–34°C</strong><br>
+              夜間 <strong style="color:var(--cream);">25–27°C</strong><br>
+              濕度 <strong style="color:var(--cream);">高（約80%）</strong>
+            </div>
+          </div>
+          <div style="padding:10px 14px;background:rgba(231,131,42,0.08);border-left:2px solid rgba(231,131,42,0.4);font-size:12px;color:#8A4A10;line-height:1.7;">
+            ⛅ 午後雷陣雨機率高，通常下30-60分鐘即停。早上多為晴天，適合戶外活動。
+          </div>
+        </div>
+
+        <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.15);padding:20px 24px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);margin-bottom:12px;">🏝️ 蘭卡威 4/10–13</div>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+            <div style="font-family:'Playfair Display',serif;font-size:40px;color:#2A8FC4;">31°</div>
+            <div style="font-size:12px;color:var(--text-dim);line-height:1.8;">
+              日間最高 <strong style="color:var(--cream);">30–32°C</strong><br>
+              夜間 <strong style="color:var(--cream);">24–26°C</strong><br>
+              海風吹拂，體感較舒適
+            </div>
+          </div>
+          <div style="padding:10px 14px;background:rgba(42,143,196,0.06);border-left:2px solid rgba(42,143,196,0.35);font-size:12px;color:#185A7D;line-height:1.7;">
+            🌊 4月為蘭卡威旅遊旺季末尾，天氣好、海象平穩，海灘活動絕佳。偶有午後短暫陣雨，7-10月才是正式雨季。
+          </div>
+        </div>
+
+      </div>
+      <div style="padding:14px 18px;background:rgba(154,111,42,0.06);border:1px solid rgba(154,111,42,0.15);font-size:12px;color:var(--text-dim);line-height:1.8;">
+        💡 <strong style="color:var(--cream);">整體提示：</strong>台灣與馬來西亞 <strong style="color:var(--cream);">無時差</strong>，手機不用調整時間。室內冷氣很強（博物館、商場、餐廳），長輩要注意保暖。紫外線強，防曬不可少。
+      </div>
+    </div>
+
+    <!-- 行李建議 -->
+    <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:20px;">🧳 行李清單建議</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+
+      <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.15);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+        <div style="font-size:20px;margin-bottom:10px;">👕</div>
+        <div style="font-size:14px;color:var(--cream);font-weight:600;margin-bottom:12px;">衣物</div>
+        <div style="font-size:12px;color:var(--text-dim);line-height:2;">
+          ✅ 輕薄透氣的短袖、短褲<br>
+          ✅ 防曬薄外套（室內冷氣用）<br>
+          ✅ 長輩建議帶 1-2 件薄長袖<br>
+          ✅ 泳衣（蘭卡威海灘必備）<br>
+          ✅ 輕便拖鞋（海灘用）<br>
+          ✅ 舒適好走的平底鞋（博物館、鳥類公園）<br>
+          ⚠️ 參觀清真寺/宗教場所需蓋膝蓋，備薄長裙或薄長褲
+        </div>
+      </div>
+
+      <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.15);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+        <div style="font-size:20px;margin-bottom:10px;">🧴</div>
+        <div style="font-size:14px;color:var(--cream);font-weight:600;margin-bottom:12px;">盥洗 & 藥品</div>
+        <div style="font-size:12px;color:var(--text-dim);line-height:2;">
+          ✅ 防曬乳 SPF50+（必備！）<br>
+          ✅ 防蚊液（蘭卡威戶外必用）<br>
+          ✅ 腸胃藥、止瀉藥（水土不服備用）<br>
+          ✅ 常備藥、長輩慣用藥（帶足量）<br>
+          ✅ 暈車藥（包車遊覽山路備用）<br>
+          ✅ OK繃、消毒棉片<br>
+          ✅ 濕紙巾（路邊攤必備）
+        </div>
+      </div>
+
+      <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.15);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+        <div style="font-size:20px;margin-bottom:10px;">📱</div>
+        <div style="font-size:14px;color:var(--cream);font-weight:600;margin-bottom:12px;">3C & 文件</div>
+        <div style="font-size:12px;color:var(--text-dim);line-height:2;">
+          ✅ 護照（4本，確認效期）<br>
+          ✅ 手機 + 充電線 + 充電頭<br>
+          ✅ 行動電源（飛機上不可托運）<br>
+          ✅ eSIM 或馬來西亞 SIM 卡<br>
+          ✅ 爸爸相機 + 備用電池 + 記憶卡<br>
+          ✅ 腳架（KLCC夜景必備）<br>
+          ✅ 馬來西亞插座為英規三方腳，台灣扁頭需轉接頭
+        </div>
+      </div>
+
+      <div style="background:#FFFFFF;border:1px solid rgba(31,107,95,0.15);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+        <div style="font-size:20px;margin-bottom:10px;">👴</div>
+        <div style="font-size:14px;color:var(--cream);font-weight:600;margin-bottom:12px;">長輩特別準備</div>
+        <div style="font-size:12px;color:var(--text-dim);line-height:2;">
+          ✅ 所有慣用藥品（帶超過行程天數的份量）<br>
+          ✅ 藥品英文說明或醫師處方箋（備查）<br>
+          ✅ 保健品（行動不便時的補充）<br>
+          ✅ 防滑好走的鞋（非夾腳拖）<br>
+          ✅ 折疊式雨傘（午後陣雨備用）<br>
+          ✅ 個人緊急聯絡卡（放在隨身包）<br>
+          ✅ 旅遊保險保單影本隨身攜帶
+        </div>
+      </div>
+
+      <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.15);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+        <div style="font-size:20px;margin-bottom:10px;">🌊</div>
+        <div style="font-size:14px;color:var(--cream);font-weight:600;margin-bottom:12px;">蘭卡威海灘專屬</div>
+        <div style="font-size:12px;color:var(--text-dim);line-height:2;">
+          ✅ 泳衣 / 泳褲<br>
+          ✅ 防水手機袋（紅樹林船遊 & 水上活動）<br>
+          ✅ 快乾毛巾<br>
+          ✅ 防水防曬 SPF50+（水上活動版）<br>
+          ✅ 太陽眼鏡<br>
+          ✅ 沙灘帽 / 遮陽帽（長輩必備）<br>
+          ✅ 更換衣物放小背包方便
+        </div>
+      </div>
+
+      <div style="background:#FFFFFF;border:1px solid rgba(176,48,32,0.12);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+        <div style="font-size:20px;margin-bottom:10px;">⚠️</div>
+        <div style="font-size:14px;color:var(--cream);font-weight:600;margin-bottom:12px;">行李箱注意事項</div>
+        <div style="font-size:12px;color:var(--text-dim);line-height:2;">
+          ✅ 3個29吋大箱 + 建議每人1個隨身小背包<br>
+          ✅ 行動電源、相機備用電池 <strong style="color:#B03020;">只能放手提行李</strong><br>
+          ✅ 液體100ml以下才可手提（乳液、防曬等）<br>
+          ✅ 回程蘭卡威免稅品預留空間（建議帶可折疊購物袋）<br>
+          ✅ 托運行李建議貼上識別標籤，3個箱子容易搞混
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section id="checklist" style="background:var(--dark2);">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">✅ Pre-Trip Checklist</div>
+      <h2 class="section-title">出發前 <em>待辦清單</em></h2>
+      <div class="divider"></div>
+      <p style="margin-top:16px; font-size:13px; color:var(--text-dim)">點擊可標記完成</p>
+    </div>
+    <div class="checklist-grid">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>確認所有人護照效期（6個月以上）</strong>
+          4人均需確認，尤其長輩護照
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>出發前3天填寫 MDAC 數位入境卡</strong>
+          <span class="check-sub">iqa.immigration.gov.my/mdac · 4人各填各的</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>購買旅遊平安險 + 旅遊不便險</strong>
+          <span class="check-sub">65歲長輩確認保額及年齡條件，出發前5個工作天投保</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>提前購買 KLIA Express 車票（網路9折）</strong>
+          <span class="check-sub">kliaekspres.com · 4人各買一張，4/8去程 + 4/10回程各一</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>聯絡 Malibest Resort 確認機場接駁</strong>
+          <span class="check-sub">+60 4-955 8202 · 確認4/10抵達接駁 + 4/13出發接駁</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>預訂蘭卡威景點包天計程車（4/11–4/12）</strong>
+          每天約 RM200–250，蘭卡威景點分散需包車
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>蘭卡威纜車門票提前購買</strong>
+          <span class="check-sub">panoramalangkawi.com/skycab</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>Bon Ton Resort 訂位</strong>
+          <span class="check-sub">+60 4-955 3643</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>Orkid Ria 海鮮餐廳訂位</strong>
+          <span class="check-sub">+60 17-614 4128</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>吉林紅樹林半日導覽預訂</strong>
+          含船費，約 RM150/人
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>購買 Touch 'n Go 卡（4張）</strong>
+          <span class="check-sub">KUL機場入境後購買，搭輕軌用</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>確認 Malibest Resort 早餐方案</strong>
+          確認是否含早餐
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>準備小額馬幣零錢</strong>
+          部分廁所收費 RM0.50
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>購買 eSIM 或馬來西亞 SIM 卡</strong>
+          出發前在台灣購買，抵達即用
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>備妥英規三方插座轉接頭</strong>
+          <span class="check-sub">馬來西亞插座與台灣不同，4人建議帶2–3個</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>長輩藥品清點</strong>
+          帶超過行程天數份量，附英文說明備查
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <strong>爸爸相機裝備確認</strong>
+          備用電池 / 記憶卡 / 腳架（KLCC夜景必備）
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALTERNATIVES -->
+<section id="alternatives" style="background:var(--dark);">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">🔀 Plan B · 備案景點</div>
+      <h2 class="section-title">家人投票 <em>備案選擇</em></h2>
+      <div class="divider"></div>
+      <p style="margin-top:16px; font-size:13px; color:var(--text-dim); line-height:1.8">
+        以下景點可替換原行程中對應的活動。每張卡片標示了<br>
+        <span style="color:var(--gold)">🔄 可替換哪一天哪個景點</span>、難度、長輩友善度與爸爸拍照評分。
+      </p>
+    </div>
+
+    <!-- 替換4/9 City Walk備案 -->
+    <div style="margin-bottom:48px;">
+      <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--gold); margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid rgba(201,168,76,0.2);">
+        🔄 4/9（四）City Walk 備案 — 若家人想改走文化館路線可選
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px;">
+
+        <div class="hotel-card" style="position:relative;background:#FFFFFF;">
+          <div style="position:absolute;top:16px;right:16px;font-family:'Space Mono',monospace;font-size:9px;padding:4px 8px;background:rgba(154,111,42,0.1);border:1px solid rgba(154,111,42,0.25);color:var(--gold);">RM20/人</div>
+          <div class="hotel-city">替換：茨廠街上午</div>
+          <div class="hotel-name">伊斯蘭藝術博物館</div>
+          <div style="display:flex;gap:16px;margin:12px 0;font-size:12px;color:var(--text-dim);">
+            <span>👴 長輩友善度 ★★★★★</span>
+            <span>📸 拍照評分 ★★★★★</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.9;">
+            東南亞最美博物館，全冷氣有電梯，圓頂大廳幾何藝術極美。搭 Monorail → KL Sentral → LRT → Muzium Negara 站。
+            可接鳥類公園（步行可達）當作下午活動，再接晚上雙峰塔。
+          </div>
+          <div class="item-links" style="margin-top:12px;">
+            <a class="item-link link-map" href="https://maps.google.com/?q=Islamic+Arts+Museum+Malaysia" target="_blank">🗺 地圖</a>
+            <a class="item-link link-web" href="http://www.iamm.org.my" target="_blank">🌐 官網</a>
+          </div>
+        </div>
+
+        <div class="hotel-card" style="position:relative;background:#FFFFFF;">
+          <div style="position:absolute;top:16px;right:16px;font-family:'Space Mono',monospace;font-size:9px;padding:4px 8px;background:rgba(154,111,42,0.1);border:1px solid rgba(154,111,42,0.25);color:var(--gold);">約RM67/人</div>
+          <div class="hotel-city">替換：鳥類公園下午</div>
+          <div class="hotel-name">KL 鳥類公園</div>
+          <div style="display:flex;gap:16px;margin:12px 0;font-size:12px;color:var(--text-dim);">
+            <span>👴 長輩友善度 ★★★★☆</span>
+            <span>📸 拍照評分 ★★★★★</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.9;">
+            世界最大自由飛翔鳥園，孔雀隨意漫步可近距離拍照。全程平地，長輩友善。下午2-3點孔雀最活躍。接博物館午餐後步行可達。
+          </div>
+          <div class="item-links" style="margin-top:12px;">
+            <a class="item-link link-map" href="https://maps.google.com/?q=KL+Bird+Park+Kuala+Lumpur" target="_blank">🗺 地圖</a>
+            <a class="item-link link-web" href="https://klbirdpark.com" target="_blank">🌐 官網</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 替換4/11 纜車備案 -->
+    <div style="margin-bottom:48px;">
+      <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--teal-light); margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid rgba(61,171,154,0.2);">
+        🔄 4/11（六）纜車日備案 — 若纜車因天氣關閉可選
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px;">
+
+        <!-- 工藝文化中心 -->
+        <div class="hotel-card" style="position:relative;background:#FFFFFF;">
+          <div style="position:absolute;top:16px;right:16px;font-family:'Space Mono',monospace;font-size:9px;padding:4px 8px;background:rgba(42,124,111,0.15);border:1px solid rgba(42,124,111,0.3);color:var(--teal-light);">免費入場</div>
+          <div class="hotel-city">蘭卡威工藝文化中心</div>
+          <div class="hotel-name">Langkawi Craft Complex</div>
+          <div style="display:flex;gap:16px;margin:12px 0;font-size:12px;color:var(--text-dim);">
+            <span>👴 長輩友善度 ★★★★★</span>
+            <span>📷 拍照評分 ★★★☆☆</span>
+          </div>
+          <div style="font-size:13px;color:var(--text-dim);line-height:1.8;margin-bottom:12px;">
+            免費入場、全冷氣室內。可觀賞蠟染示範、玻璃吹製、傳統編織等現場工藝表演。孩子可體驗蠟染DIY，長輩可坐著慢慢欣賞，完全零體力消耗。
+          </div>
+          <div class="tag-row" style="margin-bottom:12px;">
+            <span class="tag tag-free">免費</span>
+            <span class="tag tag-wc">🚻 館內有廁所</span>
+            <span class="tag" style="background:rgba(52,152,219,0.1);color:#5DADE2;border:1px solid rgba(52,152,219,0.2);">⏱ 約1.5小時</span>
+          </div>
+          <div class="photo-tip">
+            <strong>📷 爸爸拍照建議</strong>
+            蠟染布料色彩豐富，是絕佳靜物攝影題材。工匠手部特寫＋專注神情，是很有力量的人文紀實。
+          </div>
+          <div class="item-links">
+            <a class="item-link link-map" href="https://maps.google.com/?q=Langkawi+Craft+Complex" target="_blank">🗺 Google Maps</a>
+            <a class="item-link link-ig" href="https://www.instagram.com/explore/tags/langkawicraftcomplex/" target="_blank">📷 IG</a>
+          </div>
+        </div>
+
+        <!-- 海底世界 -->
+        <div class="hotel-card">
+          <div class="hotel-city">蘭卡威海底世界</div>
+          <div class="hotel-name">Underwater World Langkawi</div>
+          <div style="display:flex;gap:16px;margin:12px 0;font-size:12px;color:var(--text-dim);">
+            <span>👴 長輩友善度 ★★★★★</span>
+            <span>📷 拍照評分 ★★★★☆</span>
+          </div>
+          <div style="font-size:13px;color:var(--text-dim);line-height:1.8;margin-bottom:12px;">
+            全室內冷氣，就在珍南海灘旁走路可達。有企鵝、水母、鯊魚、魟魚，適合全年齡。玻璃水底隧道是拍照亮點。約需1.5小時，老少咸宜。
+          </div>
+          <div class="tag-row" style="margin-bottom:12px;">
+            <span class="tag tag-wc">🚻 館內有廁所</span>
+            <span class="tag" style="background:rgba(52,152,219,0.1);color:#5DADE2;border:1px solid rgba(52,152,219,0.2);">⏱ 約1.5小時</span>
+            <span class="tag tag-photo">📸 水底隧道必拍</span>
+          </div>
+          <div class="photo-tip">
+            <strong>📷 爸爸拍照建議</strong>
+            水底隧道藍光折射效果夢幻，仰拍魟魚剪影有強烈視覺衝擊。企鵝館透明玻璃可貼近拍攝，孩子與企鵝互動的畫面很可愛。
+          </div>
+          <div class="item-links">
+            <a class="item-link link-map" href="https://maps.google.com/?q=Underwater+World+Langkawi" target="_blank">🗺 Google Maps</a>
+            <a class="item-link link-web" href="https://underwaterworldlangkawi.com/" target="_blank">🌐 官網</a>
+            <a class="item-link link-ig" href="https://www.instagram.com/explore/tags/underwaterworldlangkawi/" target="_blank">📷 IG</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 替換4/12 鱷魚公園備案 -->
+    <div style="margin-bottom:48px;">
+      <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--gold); margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid rgba(201,168,76,0.2);">
+        🔄 4/12（日）備案景點 — 若不想去鱷魚公園可選
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px;">
+
+        <!-- 海底世界 -->
+        <div class="hotel-card" style="background:#FFFFFF;">
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--teal-light);margin-bottom:10px;">✅ 全冷氣 · 步行可到 · 不搭船</div>
+          <div class="hotel-city">飯店步行900公尺</div>
+          <div class="hotel-name">海底世界 Underwater World</div>
+          <div style="display:flex;gap:16px;margin:12px 0;font-size:12px;color:var(--text-dim);">
+            <span>👴 長輩友善度 ★★★★★</span>
+            <span>📷 拍照評分 ★★★★☆</span>
+          </div>
+          <div style="font-size:13px;color:var(--text-dim);line-height:1.8;margin-bottom:12px;">
+            馬來西亞最大水族館之一，4,000多種水底生物，15公尺長玻璃隧道仰望鯊魚海龜。還有企鵝館、海獅表演。全程室內冷氣，長輩最舒服，步行即可到。約需2小時。
+          </div>
+          <div class="tag-row" style="margin-bottom:12px;">
+            <span class="tag tag-photo">📸 海底隧道</span>
+            <span class="tag tag-wc">🚻 館內多處廁所</span>
+            <span class="tag tag-free">全室內冷氣</span>
+            <span class="tag" style="background:rgba(52,152,219,0.1);color:#5DADE2;border:1px solid rgba(52,152,219,0.2);">⏱ 約2小時</span>
+          </div>
+          <div style="font-size:12px; color:var(--text-dim); margin-bottom:10px; line-height:1.7;">
+            💰 門票：約 RM60–70/人<br>
+            🕙 開放時間：每日開放<br>
+            📍 距 Malibest 步行900公尺
+          </div>
+          <div class="item-links">
+            <a class="item-link link-map" href="https://maps.google.com/?q=Underwater+World+Langkawi" target="_blank">🗺 Google Maps</a>
+            <a class="item-link link-web" href="https://www.underwaterworldlangkawi.com.my" target="_blank">🌐 官網</a>
+          </div>
+        </div>
+
+        <!-- 紅樹林船遊（僅媽媽狀況好時） -->
+        <div class="hotel-card" style="background:#FFFFFF;">
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:1px;color:#E74C3C;margin-bottom:10px;">⚠ 需搭船 · 媽媽狀況好時再考慮</div>
+          <div class="hotel-city">生態攝影首選</div>
+          <div class="hotel-name">吉林紅樹林船遊 Kilim Geoforest</div>
+          <div style="display:flex;gap:16px;margin:12px 0;font-size:12px;color:var(--text-dim);">
+            <span>👴 長輩友善度 ★★★★☆</span>
+            <span>📷 拍照評分 ★★★★★</span>
+          </div>
+          <div style="font-size:13px;color:var(--text-dim);line-height:1.8;margin-bottom:12px;">
+            老鷹低空掠水捕魚、猴子、紅樹林倒影，是爸爸最夢幻的生態攝影場景。全程坐船，長輩零體力消耗。建議包半日導覽含船費。<br><br>
+            ⚠️ 媽媽容易暈船，建議事先服暈船藥，或等媽媽狀況好再安排。
+          </div>
+          <div class="tag-row" style="margin-bottom:12px;">
+            <span class="tag tag-photo">📸 老鷹生態攝影</span>
+            <span class="tag tag-warn">⚠ 需搭船</span>
+            <span class="tag" style="background:rgba(52,152,219,0.1);color:#5DADE2;border:1px solid rgba(52,152,219,0.2);">⏱ 約3小時</span>
+          </div>
+          <div style="font-size:12px; color:var(--text-dim); margin-bottom:10px; line-height:1.7;">
+            💰 約 RM150/人（含導覽）<br>
+            🕙 建議早上出發（光線最佳）<br>
+            📷 老鷹捕魚：快門1/2000+連拍
+          </div>
+          <div class="item-links">
+            <a class="item-link link-map" href="https://maps.google.com/?q=Kilim+Geoforest+Park+Langkawi" target="_blank">🗺 Google Maps</a>
+            <a class="item-link link-web" href="https://kilimgeoforestpark.com" target="_blank">🌐 官網</a>
+          </div>
+        </div>
+
+        <!-- 老鷹廣場 + 庫阿鎮 -->
+        <div class="hotel-card" style="background:#FFFFFF;">
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--gold);margin-bottom:10px;">免費 · 可搭配免稅購物</div>
+          <div class="hotel-city">地標 + 購物</div>
+          <div class="hotel-name">老鷹廣場 + 庫阿鎮半日</div>
+          <div style="display:flex;gap:16px;margin:12px 0;font-size:12px;color:var(--text-dim);">
+            <span>👴 長輩友善度 ★★★★★</span>
+            <span>📷 拍照評分 ★★★☆☆</span>
+          </div>
+          <div style="font-size:13px;color:var(--text-dim);line-height:1.8;margin-bottom:12px;">
+            18公尺大理石老鷹雕像是蘭卡威地標，免費參觀。搭配庫阿鎮 Haji Ismail 免稅商場一起逛，巧克力、酒、香水、燕窩一次買齊，輕鬆半天行程。
+          </div>
+          <div class="tag-row" style="margin-bottom:12px;">
+            <span class="tag tag-photo">📸 地標合照</span>
+            <span class="tag tag-free">免費入場</span>
+            <span class="tag tag-wc">🚻 商場廁所</span>
+          </div>
+          <div style="font-size:12px; color:var(--text-dim); margin-bottom:10px; line-height:1.7;">
+            💰 老鷹廣場免費，購物依個人<br>
+            🕙 商場約09:00–21:00<br>
+            🚗 距飯店約30分鐘
+          </div>
+          <div class="item-links">
+            <a class="item-link link-map" href="https://maps.google.com/?q=Eagle+Square+Langkawi" target="_blank">🗺 老鷹廣場</a>
+            <a class="item-link link-map" href="https://maps.google.com/?q=Haji+Ismail+Group+Langkawi" target="_blank">🗺 Haji Ismail</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 比較表 -->
+    <div style="background:#FFFFFF;border:1px solid rgba(154,111,42,0.15);padding:28px 32px;box-shadow:0 1px 6px rgba(0,0,0,0.06);">
+      <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--gold); margin-bottom:20px;">📊 4/12 景點快速比較</div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:13px; color:var(--text-dim);">
+          <thead>
+            <tr style="border-bottom:1px solid rgba(201,168,76,0.2);">
+              <th style="text-align:left; padding:10px 12px; color:var(--cream); font-weight:600;">景點</th>
+              <th style="text-align:center; padding:10px 12px;">搭船</th>
+              <th style="text-align:center; padding:10px 12px;">👴 長輩</th>
+              <th style="text-align:center; padding:10px 12px;">📷 拍照</th>
+              <th style="text-align:center; padding:10px 12px;">⏱ 時間</th>
+              <th style="text-align:center; padding:10px 12px;">💰 費用</th>
+              <th style="text-align:center; padding:10px 12px;">🚗 距飯店</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05); background:rgba(42,124,111,0.06);">
+              <td style="padding:12px; color:var(--teal-light); font-weight:600;">🐊 鱷魚冒險樂園（主行程）</td>
+              <td style="text-align:center; padding:12px; color:#2ECC71; font-weight:700;">✅ 不用</td>
+              <td style="text-align:center; padding:12px;">★★★★☆</td>
+              <td style="text-align:center; padding:12px;">★★★★☆</td>
+              <td style="text-align:center; padding:12px;">2–3小時</td>
+              <td style="text-align:center; padding:12px;">~RM85/人</td>
+              <td style="text-align:center; padding:12px;">25分鐘</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px; color:var(--cream);">🌊 海底世界</td>
+              <td style="text-align:center; padding:12px; color:#2ECC71; font-weight:700;">✅ 不用</td>
+              <td style="text-align:center; padding:12px;">★★★★★</td>
+              <td style="text-align:center; padding:12px;">★★★★☆</td>
+              <td style="text-align:center; padding:12px;">2小時</td>
+              <td style="text-align:center; padding:12px;">~RM65/人</td>
+              <td style="text-align:center; padding:12px;">步行</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px; color:var(--cream);">🦅 老鷹廣場＋庫阿鎮</td>
+              <td style="text-align:center; padding:12px; color:#2ECC71; font-weight:700;">✅ 不用</td>
+              <td style="text-align:center; padding:12px;">★★★★★</td>
+              <td style="text-align:center; padding:12px;">★★★☆☆</td>
+              <td style="text-align:center; padding:12px;">半天</td>
+              <td style="text-align:center; padding:12px;">免費+購物</td>
+              <td style="text-align:center; padding:12px;">30分鐘</td>
+            </tr>
+            <tr>
+              <td style="padding:12px; color:var(--cream);">🚤 吉林紅樹林（須搭船）</td>
+              <td style="text-align:center; padding:12px; color:#E74C3C; font-weight:700;">⚠ 需搭船</td>
+              <td style="text-align:center; padding:12px;">★★★★☆</td>
+              <td style="text-align:center; padding:12px;">★★★★★</td>
+              <td style="text-align:center; padding:12px;">3小時</td>
+              <td style="text-align:center; padding:12px;">~RM150/人</td>
+              <td style="text-align:center; padding:12px;">50分鐘</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px; color:var(--cream);">鱷魚冒險樂園</td>
+              <td style="text-align:center; padding:12px;">★★★★☆</td>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-title">旅途愉快 ✈️</div>
+  <p class="footer-sub">Malaysia · April 2026 · Family Journey</p>
+  <p style="margin-top:16px; font-size:11px; color:rgba(245,237,214,0.4); font-family:'Space Mono',monospace">
+    JX725 · MH1438 · MH1433 · JX726
+  </p>
+</footer>
+
+<script>
+  function toggleDay(header) {
+    const block = header.parentElement;
+    block.classList.toggle('open');
+  }
+
+  function toggleCheck(item) {
+    item.classList.toggle('done');
+    const box = item.querySelector('.check-box');
+    box.textContent = item.classList.contains('done') ? '✓' : '';
+  }
+
+  // Intersection Observer for subtle fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.style.opacity = '1';
+        el.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.hotel-card, .flight-card, .shop-card, .wc-item, .check-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
